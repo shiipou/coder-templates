@@ -31,3 +31,6 @@ RUN useradd coder \
     echo "coder ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/nopasswd
 
 USER coder
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh

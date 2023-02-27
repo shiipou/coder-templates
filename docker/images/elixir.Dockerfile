@@ -1,5 +1,5 @@
 # Start from base image
-FROM elixir:1.14
+FROM elixir:1.13
 
 USER root
 
