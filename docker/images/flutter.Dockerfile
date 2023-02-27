@@ -43,17 +43,17 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y curl g
 USER coder
 
 # Prepare Android directories and system variables
-RUN mkdir -p $HOME/Android/sdk
-ENV ANDROID_SDK_ROOT $HOME/Android/sdk
-RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
+# RUN mkdir -p $HOME/Android/sdk
+# ENV ANDROID_SDK_ROOT $HOME/Android/sdk
+# RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 
 # Set up Android SDK
-RUN curl -fsSLO sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-RUN unzip sdk-tools.zip && rm sdk-tools.zip
-RUN mv tools $HOME/Android/sdk/tools
-RUN cd $HOME/Android/sdk/tools/bin && yes | ./sdkmanager --licenses
-RUN cd $HOME/Android/sdk/tools/bin && ./sdkmanager "build-tools;29.0.2" "patcher;v4" "platform-tools" "platforms;android-29" "sources;android-29"
-ENV PATH "$PATH:$HOME/Android/sdk/platform-tools"
+# RUN curl -fsSLO sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+# RUN unzip sdk-tools.zip && rm sdk-tools.zip
+# RUN mv tools $HOME/Android/sdk/tools
+# RUN cd $HOME/Android/sdk/tools/bin && yes | ./sdkmanager --licenses
+# RUN cd $HOME/Android/sdk/tools/bin && ./sdkmanager "build-tools;29.0.2" "patcher;v4" "platform-tools" "platforms;android-29" "sources;android-29"
+# ENV PATH "$PATH:$HOME/Android/sdk/platform-tools"
 
 # Download Flutter SDK
 RUN git clone https://github.com/flutter/flutter.git
