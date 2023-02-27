@@ -85,3 +85,6 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 
 # Set back to coder user
 USER coder
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh

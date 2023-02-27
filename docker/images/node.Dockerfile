@@ -46,3 +46,6 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y yarn
 
 # Set back to coder user
 USER coder
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh

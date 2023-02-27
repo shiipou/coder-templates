@@ -35,3 +35,6 @@ RUN useradd coder \
 
 # Force user to coder
 USER coder
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh

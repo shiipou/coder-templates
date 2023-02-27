@@ -61,3 +61,6 @@ ENV PATH "$PATH:/home/developer/flutter/bin"
 
 # Run basic check to download Dark SDK
 RUN flutter doctor
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh

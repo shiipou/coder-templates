@@ -46,3 +46,6 @@ RUN curl -sL https://github.com/vlang/v/releases/download/${V_VERSION}/v_linux.z
     rm v_linux.zip
 
 RUN $HOME/v/v symlink
+
+# Install coder binary
+RUN curl -fsSL https://coder.com/install.sh | sh
